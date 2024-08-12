@@ -1,5 +1,11 @@
 public class Salt extends Product{
-    public Salt(String name, int dataCreate, int thisTime, int bestBeforeDate){
-        super(name, dataCreate, thisTime, bestBeforeDate);
+    public Salt(String name,  int bestBeforeDate){
+        super(name,  bestBeforeDate);
+    }
+
+    @Override
+    void isFresh() {
+        System.out.println("Ваш продукт " + getName());
+        super.isFresh();
     }
 }
