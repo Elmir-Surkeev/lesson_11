@@ -55,11 +55,14 @@ public class Store {
             }
         }
 
-    polym(products);
+    doInception(products);
     }
 
 
-    public static void polym(Product[] products) {
+    public static void doInception(Product[] products) {
+        System.out.println("                         Inspection Result");
+        System.out.println("Product |    Produced on   |   Storage place  |    S.life  days   | Fresh");
+        System.out.println("--------+------------------+------------------+-------------------+-------");
         for (Product product : products) {
             product.isFresh();
         }

@@ -5,7 +5,6 @@ public class Corn extends Product{
 
     @Override
     void isFresh() {
-        System.out.println("Ваш продукт " + getName());
         super.isFresh();
     }
 }

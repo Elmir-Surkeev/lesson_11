@@ -5,7 +5,6 @@ public class Milk extends Product {
 
     @Override
     void isFresh() {
-        System.out.println("Ваш продукт " + getName() + getInIcebox());
         super.isFresh();
     }
 }

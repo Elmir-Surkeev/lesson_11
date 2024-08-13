@@ -23,30 +23,22 @@ public abstract class Product {
         Random rnd = new Random();
         int random = rnd.nextInt(1, 200);
 
-        LocalDate produceOn = LocalDate.now().minusDays(random); // Дата производства
-        LocalDate expiryDate = produceOn.plusDays(bestBeforeDate); // Дата истечения срока годности
-
-      //  if (placeProduct())
+        LocalDate produceOn = LocalDate.now().minusDays(random);
+        LocalDate expiryDate = produceOn.plusDays(bestBeforeDate);
+        String location = getInIcebox() ? "Ice box" : "Show case";
         if (LocalDate.now().isBefore(expiryDate) || bestBeforeDate == 0) {;
-            System.out.println("Продукт свежий, произведен: " + produceOn );
-            System.out.println("Можно употреблять до: " + expiryDate );
-            System.out.println("___________________________________________");
+            if (getInIcebox() == true){
+                System.out.printf("%-7s | %-16s | %-16s | %-17d | %-5s%n", getName(), produceOn, location, bestBeforeDate, "True");
+            }else{
+                System.out.printf("%-7s | %-16s | %-16s | %-17d | %-5s%n", getName(), produceOn, location, bestBeforeDate, "True");
+            }
         }
         else if (LocalDate.now().isAfter(expiryDate)) {
-            System.out.println("Продукт просрочен, произведен: " + produceOn);
-            System.out.println("___________________________________________");
-        }
-        else{
-            System.out.println("asf: " + produceOn);
-
+            if (getInIcebox() == true){
+                System.out.printf("%-7s | %-16s | %-16s | %-17d | %-5s%n", getName(), produceOn, location, bestBeforeDate, "False");
+            }else{
+                System.out.printf("%-7s | %-16s | %-16s | %-17d | %-5s%n", getName(), produceOn, location, bestBeforeDate, "False");
+            }
         }
     }
-//    void placeProduct(){
-//        int place = rnd.nextInt(1);
-//        if (place == 0){
-//            inIcebox = true;
-//        }else if (place==1){
-//            inIcebox = false;
-//        }
-
 }
