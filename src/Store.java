@@ -19,17 +19,17 @@ public class Store {
                     break;
                 case 2:
                     if (inFridje == 0){
-                        products[i] = new Milk("Salt", 20, false);
+                        products[i] = new Milk("Salt", 0, false);
                     }else {
-                        products[i] = new Milk("Salt", 20, true);
+                        products[i] = new Milk("Salt", 0, true);
 
                     }
                     break;
                 case 3:
                     if (inFridje == 0){
-                        products[i] = new Milk("Fish", 0, false);
+                        products[i] = new Milk("Fish", 20, false);
                     }else {
-                        products[i] = new Milk("Fish", 0, true);
+                        products[i] = new Milk("Fish", 20, true);
 
                     }
                     break;

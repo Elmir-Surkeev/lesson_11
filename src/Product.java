@@ -19,13 +19,18 @@ public abstract class Product {
     String getName(){
         return name;
     }
+
+    public int getBestBeforeDate() {
+        return bestBeforeDate;
+    }
+
     void isFresh(){
         Random rnd = new Random();
         int random = rnd.nextInt(1, 200);
+        String location = getInIcebox() ? "Ice box" : "Show case";
 
         LocalDate produceOn = LocalDate.now().minusDays(random);
         LocalDate expiryDate = produceOn.plusDays(bestBeforeDate);
-        String location = getInIcebox() ? "Ice box" : "Show case";
         if (LocalDate.now().isBefore(expiryDate) || bestBeforeDate == 0) {;
             if (getInIcebox() == true){
                 System.out.printf("%-7s | %-16s | %-16s | %-17d | %-5s%n", getName(), produceOn, location, bestBeforeDate, "True");
