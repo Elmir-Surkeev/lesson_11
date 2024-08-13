@@ -1,7 +1,7 @@
 public class Stew extends Product{
 
-    public Stew(String name, int bestBeforeDate){
-        super(name, bestBeforeDate);
+    public Stew(String name, int bestBeforeDate, boolean inIcebox){
+        super(name, bestBeforeDate, inIcebox);
     }
 
     @Override

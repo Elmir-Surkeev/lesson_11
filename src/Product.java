@@ -3,12 +3,18 @@ import java.util.Random;
 public abstract class Product {
     Random rnd = new Random();
     private String name;
+
+   boolean getInIcebox(){
+       return inIcebox;
+   }
+
     private int bestBeforeDate;
     private boolean inIcebox;
 
-    public Product(String name,int bestBeforeDate){
+    public Product(String name,int bestBeforeDate, boolean inIcebox){
         this.name = name;
         this.bestBeforeDate = bestBeforeDate;
+        this.inIcebox = inIcebox;
     }
     String getName(){
         return name;

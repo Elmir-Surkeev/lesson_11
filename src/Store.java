@@ -4,25 +4,50 @@ public class Store {
         Product[] products = new Product[20];
         Random rnd = new Random();
 
-
         for(int i = 0; i< products.length; i++){
+            int inFridje = rnd.nextInt(2);
 
-            int productType = rnd.nextInt(4);
+            int productType = rnd.nextInt(1, 5);
             switch (productType){
-                case 0:
-                    products[i] = new Milk("Milk", 60);
-                    break;
                 case 1:
-                    products[i] = new Salt("Salt", 0);
+                    if (inFridje == 0){
+                        products[i] = new Milk("Milk", 60, false);
+                    }else {
+                        products[i] = new Milk("Milk", 60, true);
+
+                    }
                     break;
                 case 2:
-                    products[i] = new Fish("Fish", 20);
+                    if (inFridje == 0){
+                        products[i] = new Milk("Salt", 20, false);
+                    }else {
+                        products[i] = new Milk("Salt", 20, true);
+
+                    }
                     break;
                 case 3:
-                    products[i] = new Corn("Corn", 150);
+                    if (inFridje == 0){
+                        products[i] = new Milk("Fish", 0, false);
+                    }else {
+                        products[i] = new Milk("Fish", 0, true);
+
+                    }
                     break;
                 case 4:
-                    products[i] = new Stew("Stew", 180);
+                    if (inFridje == 0){
+                        products[i] = new Milk("Corn", 150, false);
+                    }else {
+                        products[i] = new Milk("Corn", 150, true);
+
+                    }
+                    break;
+                case 5:
+                    if (inFridje == 0){
+                        products[i] = new Milk("Stew", 180, false);
+                    }else {
+                        products[i] = new Milk("Stew", 180, true);
+
+                    }
                     break;
                 default:
                     System.out.println("Error");
